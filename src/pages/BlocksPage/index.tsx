@@ -1,26 +1,30 @@
 import React, { useState } from "react";
-import cardData from "../../utils/Carddata";
-import TransactionCard from "../../components/TransactionCard";
+import BlockCard from "../../components/blockCard";
+import blocksData from "../../utils/blocksData";
 
-const TransactionPage = () => {
+function BlockPage() {
   const [visibleBlocks, setVisibleBlocks] = useState(3);
 
   const handleViewMore = () => {
     setVisibleBlocks((prevVisibleBlocks) => prevVisibleBlocks + 3);
+    console.log("hjjj");
   };
+
   return (
-    <div className="md:h-full" style={{}}>
-      <h1 className=" text-[16px] sm:text-[24px]  md:text-[36px] lg:text-[40px] text-[#FFFFFF] font-bold font-adventPro">
-        Latest Transactions
+    <div className="md:h-full p-5">
+      <h1 className="text-[16px] sm:text-[24px] md:text-[36px] lg:text-[40px] text-[#FFFFFF] font-bold font-adventPro">
+        Latest Blocks
       </h1>
-      <div className="grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 gap-y-4 mt-4  ">
-        {cardData.slice(0, visibleBlocks).map((item, index) => (
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-4 mt-4">
+        {blocksData.slice(0, visibleBlocks).map((item, index) => (
           <div key={index}>
-            <TransactionCard item={item} />
+            <BlockCard item={item} />
           </div>
         ))}
       </div>
-      {visibleBlocks < cardData.length && (
+
+      {visibleBlocks < blocksData.length && (
         <div className="flex justify-center items-center mt-8 mb-8 ">
           <div
             onClick={handleViewMore}
@@ -32,6 +36,6 @@ const TransactionPage = () => {
       )}
     </div>
   );
-};
+}
 
-export default TransactionPage;
+export default BlockPage;
