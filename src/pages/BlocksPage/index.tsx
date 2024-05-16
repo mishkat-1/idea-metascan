@@ -7,6 +7,7 @@ function BlockPage() {
 
   const handleViewMore = () => {
     setVisibleBlocks((prevVisibleBlocks) => prevVisibleBlocks + 3);
+    console.log("hjjj");
   };
 
   return (
