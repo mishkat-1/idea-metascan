@@ -78,7 +78,7 @@ const Footer = () => {
           </button>
         </div>
         <div>
-          <p className=" text-center text-[12px] sm:text-[14px] text-white w-[320px] sm:w-[354px] mt-40 mb-3 sm:mt-52 mx-auto">
+          <p className=" text-center text-[12px] sm:text-[14px] text-white w-[320px] sm:w-[354px] mt-32 mb-3 sm:mt-52 mx-auto">
             Copyright ©️ 2024 All Rights Reserved with{" "}
             <span className="text-globalyellow">Melonverse</span>
           </p>

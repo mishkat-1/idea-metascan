@@ -11,7 +11,7 @@ const HomePage = () => {
         autoPlay
         loop
         muted
-        className="w-[100%] h-[100vh] object-cover"
+        className="w-[100%] h-[100vh] object-cover z-1"
       ></video>
       <div className="absolute top-0 w-screen">
         <SearchBar />
