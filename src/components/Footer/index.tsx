@@ -18,8 +18,7 @@ const Footer = () => {
             <ul
               className="flex flex-col font-medium p-4 md:p-0 mt-4 border md:space-x-8 text-center
               underline decoration-slate-200 underline-offset-2 md:no-underline
-               rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-globalblack 
-               dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ml-auto mr-auto"
+               rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ml-auto mr-auto"
             >
               <li>
                 <a
@@ -84,8 +83,8 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="md:w-[460px] lg:w-[600px] xl:w-[740px] h-screen hidden lg:block">
-        <img src={MelonCard} alt="MelonCard" className="w-[740px] h-screen" />
+      <div className="md:w-[460px] lg:w-[600px] xl:w-[740px] h-[757px] hidden lg:block">
+        <img src={MelonCard} alt="MelonCard" className="w-[740px] h-[757px]" />
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BlockCard } from "../../components/BlockCard";
 import { ErrorModal } from "../../components/ErrorModal";
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 function BlockPage() {
-  const [visibleBlocks, setVisibleBlocks] = useState(3);
+  const [visibleBlocks, setVisibleBlocks] = useState(25);
   const [data, setData] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -41,42 +42,84 @@ function BlockPage() {
     setVisibleBlocks((prevVisibleBlocks) => prevVisibleBlocks + 3);
   };
 
+  const responsive = {
+    largedesktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      partialVisibilityGutter: 10, // this is needed to tell the amount of px that should be visible.
+    },
+    mediumdesktop: {
+      breakpoint: { max: 1024, min: 768 },
+      items: 2,
+      partialVisibilityGutter: 30, // this is needed to tell the amount of px that should be visible.
+    },
+    tablet: {
+      breakpoint: { max: 768, min: 464 },
+      items: 2,
+      // partialVisibilityGutter: 10, // this is needed to tell the amount of px that should be visible.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 350 },
+      items: 1,
+      partialVisibilityGutter: 30, // this is needed to tell the amount of px that should be visible.
+    },
+    smallmobile: {
+      breakpoint: { max: 350, min: 0 },
+      items: 1,
+      partialVisibilityGutter: 10, // this is needed to tell the amount of px that should be visible.
+    },
+  };
+
   return (
-    <div className="pt-4">
+    <div className="pt-4 h-[400px] bg-[#101010]">
       <ErrorModal
         show={showModal}
         onClose={handleCloseModal}
         title="Error in Blocks Fetching"
         message={errorMessage}
       />
-      <h1 className="w-[180px] md:w-[700px] lg:w-[970px] xl:w-[1280px] mx-auto text-[16px] sm:text-[24px] md:text-[36px] lg:text-[40px] text-[#FFFFFF] font-bold font-adventPro">
+      <h1 className="w-[130px] md:w-[700px] lg:w-[970px] xl:w-[1280px] mx-auto text-[16px] sm:text-[24px] md:text-[36px] lg:text-[40px] text-[#FFFFFF] font-bold font-adventPro mb-12">
         Latest Blocks
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-4 mt-4 w-[260px] mx-auto md:w-[700px] lg:w-[970px] xl:w-[1280px]">
-        {data?.length ? (
-          data?.slice(0, visibleBlocks).map((item, index) => (
-            <div key={index}>
-              <BlockCard item={item} />
+      <div className="w-[280px] mx-auto sm:w-[350px] md:w-[730px] lg:w-[980px] xl:w-[1280px] mb-28">
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={false}
+          arrows={false}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          // infinite={true}
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={1000}
+          partialVisible={true}
+        >
+          {data?.length ? (
+            data?.slice(0, visibleBlocks).map((item, index) => (
+              <div key={index}>
+                <BlockCard item={item} />
+              </div>
+            ))
+          ) : (
+            <div className="flex items-center justify-center w-[260px] mx-auto md:w-[700px] lg:w-[970px] xl:w-[1280px]">
+              <div className="text-white">Loading....</div>
             </div>
-          ))
-        ) : (
-          <div className="flex items-center justify-center w-[260px] mx-auto md:w-[700px] lg:w-[970px] xl:w-[1280px]">
-            <div className="text-white">Loading....</div>
-          </div>
-        )}
+          )}
+        </Carousel>
       </div>
 
-      {visibleBlocks < data.length && (
+      {/* {visibleBlocks < data.length && (
         <div className="flex justify-center items-center mt-8 mb-8 ">
           <div
-            onClick={handleViewMore}
+            // onClick={handleViewMore}
             className="text-globalcyan text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-exo cursor-pointer"
           >
             VIEW MORE
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

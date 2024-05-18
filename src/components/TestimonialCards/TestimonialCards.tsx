@@ -74,30 +74,46 @@ export const TestimonialCards = () => {
   return (
     <div className="flex flex-col md:flex-row md:justify-between">
       <div>
-        <div className="flex md:w-[420px] lg:w-[520px] xl:w-[720px] h-[252px] items-center justify-center bg-globalblack">
-          <div className="bg-[#ffffff] bg-opacity-10 rounded-full w-16 h-16">
-            <img src={arrowlogo} alt="" className="w-10 h-10 ml-3 mt-3" />
-          </div>
-          <div className="ml-3">
-            <p className="text-[#ffffff] text-[15px]">Total Transactions</p>
-            <p className="text-[28px] text-blue-300">
-              <AnimatedNumber value={number} />
-            </p>
+        <div className="flex md:w-[445px] lg:w-[520px] xl:w-[720px] h-[252px] items-center justify-center bg-globalblack ">
+          <div className="flex md:w-[367px] md:h-[75px]">
+            <div className="bg-[#ffffff] bg-opacity-10 rounded-full w-16 h-16 md:w-20 md:h-20">
+              <img
+                src={arrowlogo}
+                alt=""
+                className="w-10 h-10 ml-3 mt-3 md:w-12 md:h-12 md:ml-4 md:mt-4"
+              />
+            </div>
+            <div className="ml-3">
+              <p className="text-[#ffffff] text-[14px] md:text-[19px]">
+                Total Transactions
+              </p>
+              <p className="text-[28px] md:text-[40px] text-blue-300">
+                <AnimatedNumber value={number} />
+              </p>
+            </div>
           </div>
         </div>
-        <div className="flex md:w-[420px] lg:w-[520px] xl:w-[720px] h-[252px] items-center justify-center bg-[#121212]">
-          <div className="bg-[#ffffff] bg-opacity-10 rounded-full w-16 h-16">
-            <img src={blocklogo} alt="" className="w-10 h-10 ml-3 mt-3" />
-          </div>
-          <div className="ml-3">
-            <p className="text-[#ffffff] text-[15px]">Total Transactions</p>
-            <p className="text-[28px] text-blue-300">
-              <AnimatedNumber value={secodndNumber} />
-            </p>
+        <div className="flex md:w-[445px] lg:w-[520px] xl:w-[720px] h-[252px] items-center justify-center bg-[#121212]">
+          <div className="flex md:w-[367px] md:h-[75px]">
+            <div className="bg-[#ffffff] bg-opacity-10 rounded-full w-16 h-16 md:w-20 md:h-20">
+              <img
+                src={blocklogo}
+                alt=""
+                className="w-10 h-10 ml-3 mt-3 md:w-12 md:h-12 md:ml-4 md:mt-4"
+              />
+            </div>
+            <div className="ml-3">
+              <p className="text-[#ffffff] text-[14px] md:text-[19px]">
+                Total Blocks
+              </p>
+              <p className="text-[28px] md:text-[40px] text-blue-300">
+                <AnimatedNumber value={secodndNumber} />
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div className=" grid grid-cols-1 md:grid-cols-2  bg-gradient-to-r from-violet-500 to-fuchsia-500 md:w-[420px] lg:w-[820px] h-[700px] md:h-[504px] items-center justify-center">
+      <div className=" grid grid-cols-1 md:grid-cols-2  bg-gradient-to-r from-violet-500 to-fuchsia-500 md:w-[470px] lg:w-[820px] h-[700px] md:h-[504px] items-center justify-center">
         <div className="flex flex-col justify-center items-center text-[#ffffff]">
           <div className="flex justify-center items-center  rounded-full bg-[#FFFFFF] bg-opacity-10 w-[60px] h-[60px]">
             <img src={clock} alt="" className="h-[35px] w-[35px] " />
