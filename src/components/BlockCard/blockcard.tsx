@@ -24,7 +24,7 @@ export function BlockCard({ item }: { item: any }) {
   };
 
   return (
-    <div className="bg-blue-700  p-1 pl-2 pt-1 border border-globalgrey h-[110px] sm:w-[300px] sm:h-[135px]  md:w-[320px] md:h-[140px]  lg:w-[370px] lg:h-[174px]">
+    <div className="bg-blue-700  p-1 pl-2 pt-1 border border-globalgrey h-[110px] w-[250px] sm:w-[300px] sm:h-[135px]  md:w-[325px] md:h-[140px]  lg:w-[375px] lg:h-[174px]">
       <div>
         {/* part1 */}
         <div className="flex flex-row items-center ">
