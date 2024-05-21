@@ -23,18 +23,12 @@ const TransactionPage = () => {
         `${process.env.REACT_APP_GNOSIS_TRANSACTIONS}`
       );
       const res = await response.json();
-
-      console.log("console response data ", res);
-      // console.log(res.items);
       setData(res);
     } catch (error) {
-      console.log("i am here in error block ");
       console.error(error);
       handleError(error as Error);
     }
   };
-
-  console.log("this is data", data);
 
   useEffect(() => {
     fetchBlocks();

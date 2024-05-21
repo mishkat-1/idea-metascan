@@ -6,10 +6,13 @@ import { IoCopyOutline } from "react-icons/io5";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAddress } from "../../context/AddressContext";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const [userAddress, setUserAddress] = useState("");
+  const { userAddress, setUserAddress } = useAddress();
+
+  // const [userAddress, setUserAddress] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const handleEthers = () => {
     try {
@@ -29,7 +32,6 @@ const Navbar = () => {
         setShow(false);
       }
     } catch (error) {
-      console.log("this is error", error);
       setShow(false);
     }
   };
