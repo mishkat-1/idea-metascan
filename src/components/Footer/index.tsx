@@ -3,7 +3,9 @@ import MelonCard from "../../assests/images/MelonCard.png";
 import MelonCardLogo from "../../assests/logo/MelonCardLogo.png";
 import buttonlogo7 from "../../assests/logo/buttonlogo7.png";
 import metamask from "../../assests/logo/metamask.png";
+import { useAddress } from "../../context/AddressContext";
 const Footer = () => {
+  const { userAddress } = useAddress();
   return (
     <div className="flex justify-between font-exo">
       <div className="w-screen lg:w-[550px] xl:w-[796px] lg:h-screen bg-globalblack">
@@ -70,7 +72,7 @@ const Footer = () => {
             type="button"
             className="text-white bg-globalcyan font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 w-[310px] md:w-[360px] xl:w-[451px] h-[63px] flex items-center justify-between text-[18px] mt-6"
           >
-            Enter Melonverse
+            {userAddress.length > 0 ? userAddress : "Enter Melonverse"}
             <span>
               <img src={metamask} alt="metamask" className="w-8" />
             </span>

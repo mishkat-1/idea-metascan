@@ -3,8 +3,6 @@ import { RiFileCopyLine } from "react-icons/ri";
 
 import { transactionData } from "../../utils/transactionData";
 export function TransactionCard({ item }: { item: any }) {
-  console.log("transaction card");
-  console.log(item);
   // copy function
   const CopyToClipboardIcon = ({ text }: any) => {
     const handleClick = async () => {
@@ -24,7 +22,6 @@ export function TransactionCard({ item }: { item: any }) {
     );
   };
 
-  // console.log(item);
   return (
     <div className="">
       <div className=" bg-blue-700 p-1 pl-2 pt-1 border border-globalgrey h-[110px] w-[250px] sm:w-[300px] sm:h-[135px]  md:w-[325px] md:h-[140px]  lg:w-[375px] lg:h-[174px]">

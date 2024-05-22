@@ -47,9 +47,7 @@ export const TestimonialCards = () => {
       const resp = await fetch(`${process.env.REACT_APP_GNOSIS_CARDS_STATS}`);
       const response = await resp.json();
       setSingleArr(response);
-      console.log("this is sing arr===", singleArr);
     } catch (error) {
-      console.log("i am here in error block ");
       console.error(error);
       handleError(error as Error);
     }

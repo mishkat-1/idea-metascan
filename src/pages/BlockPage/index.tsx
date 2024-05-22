@@ -23,17 +23,12 @@ function BlockPage() {
       const response = await fetch(`${process.env.REACT_APP_GNOSIS_BLOCK}`);
       const res = await response.json();
 
-      // console.log("console response data ");
-      // console.log(res.items);
       setData(res.items);
     } catch (error) {
-      console.log("i am here in error block ");
       console.error(error);
       handleError(error as Error);
     }
   };
-
-  // console.log("this is data", data);
 
   useEffect(() => {
     fetchBlocks();
